@@ -11,7 +11,7 @@ console.log("DB Name:", process.env.DB_NAME);
 
 async function connectDB() {
   const pool = await mysql.createPool({
-    host: process.env.DB_HOSTS, // ⬅️ Gunakan DB_HOSTS dari Railway
+    host: process.env.DB_HOSTS || "crossover.proxy.rlwy.net", // ⬅️ Gunakan DB_HOSTS dari Railway
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
