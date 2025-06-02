@@ -5,11 +5,11 @@ dotenv.config();
 
 async function connectDB() {
   const pool = await mysql.createPool({
-    host: process.env.DB_HOST,
+    host: process.env.DB_HOSTS, // pakai DB_HOSTS
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
-    port: process.env.DB_PORT,
+    port: parseInt(process.env.DB_PORT),
     waitForConnections: true,
     connectionLimit: 10,
   });
